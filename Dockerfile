@@ -8,7 +8,7 @@ VOLUME /tmp
 ARG JAR_FILE=target/*.jar
 
 # Add the application's jar to the container
-COPY ${JAR_FILE} app.jar
+COPY target/*.jar app.jar
 
 ENV PORT 8080
 EXPOSE 8080
