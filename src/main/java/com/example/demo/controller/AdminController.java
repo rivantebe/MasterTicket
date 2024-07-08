@@ -18,6 +18,11 @@ public class AdminController {
         return userService.createUser(user);
     }
 
+    @GetMapping("/{id}")
+    public Optional<User> getUserById(@PathVariable String id) {
+        return userService.getUserById(id);
+    }
+
     @PatchMapping("/{id}/block")
     public User blockUser(@PathVariable String id) {
         return userService.blockUser(id);
