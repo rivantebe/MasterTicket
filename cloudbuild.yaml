@@ -1,0 +1,26 @@
+steps:
+  # Step 1: Build the JAR file using Maven
+  - name: 'maven:3.6.3-jdk-11'
+    entrypoint: 'mvn'
+    args: ['clean', 'package', '-DskipTests']
+
+  # Step 2: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build', '-t', 'gcr.io/$PROJECT_ID/backendticket', '.'
+    ]
+
+  # Step 3: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'tag', 'backendticket:latest', 'gcr.io/$PROJECT_ID/camwilcariva', '.'
+    ]
+
+  # Step 4: Push the Docker image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 'gcr.io/$PROJECT_ID/camwilcariva'
+    ]
+
+images:
+  - 'gcr.io/$PROJECT_ID/camwilcariva'
