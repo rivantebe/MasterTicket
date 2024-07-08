@@ -1,6 +1,6 @@
 steps:
   # Step 1: Build the JAR file using Maven
-  - name: 'maven:3.6.3-jdk-11'
+  - name: 'maven:3.8.4-openjdk-17'
     entrypoint: 'bash'
     args:
       - '-c'
