@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -25,6 +26,17 @@ public class UserService {
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             user.setBlocked(true);
+            return userRepository.save(user);
+        }
+        return null;
+    }
+
+       public User resetPassword(String id) {
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            String newPassword = UUID.randomUUID().toString();  // Generar una nueva contraseña aleatoria
+            user.setPassword(newPassword);  // Suponiendo que tienes un campo de contraseña en tu modelo User
             return userRepository.save(user);
         }
         return null;

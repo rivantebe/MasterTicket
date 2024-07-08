@@ -22,4 +22,9 @@ public class AdminController {
     public User blockUser(@PathVariable String id) {
         return userService.blockUser(id);
     }
+
+    @PostMapping("/{id}/reset-password")
+    public User resetPassword(@PathVariable String id) {
+        return userService.resetPassword(id);
+    }
 }

@@ -9,6 +9,7 @@ public class User {
     private String id;
     private String name;
     private boolean blocked;
+    private String password;  // Campo para la contraseña
 
     // Getters y setters
     public String getId() {
@@ -33,5 +34,13 @@ public class User {
 
     public void setBlocked(boolean blocked) {
         this.blocked = blocked;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
