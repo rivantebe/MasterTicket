@@ -1,8 +1,10 @@
 steps:
   # Step 1: Build the JAR file using Maven
   - name: 'maven:3.6.3-jdk-11'
-    entrypoint: 'mvn'
-    args: ['clean', 'package', '-DskipTests']
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'mvn clean package -DskipTests && cp target/*.jar target/app.jar'
 
   # Step 2: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
