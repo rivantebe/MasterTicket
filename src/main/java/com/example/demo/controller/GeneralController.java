@@ -6,12 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GeneralController {
-
- @Autowired
-
- @GetMapping("/healthcheck")
- public String healthcheck() {
-  return "OK";
- }
-
+	@Autowired
+	
+	@GetMapping("/healthcheck")
+	public String healthcheck() {
+		return "OK";
+	}
 }
