@@ -9,6 +9,8 @@ public class Event {
     private String id;
     private String name;
     private String date;
+    private EventCategory eventCategory;
+    private EventLocation eventLocation;
 
     // Getters y setters
     public String getId() {
@@ -33,5 +35,21 @@ public class Event {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public EventCategory getEventCategory() {
+        return eventCategory;
+    }
+
+    public void setEventCategory(EventCategory eventCategory) {
+        this.eventCategory = eventCategory;
+    }
+
+    public EventLocation getEventLocation() {
+        return eventLocation;
+    }
+
+    public void setEventLocation(EventLocation eventLocation) {
+        this.eventLocation = eventLocation;
     }
 }
