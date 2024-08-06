@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/eventlocations")
+@RequestMapping("/event-locations")
 public class EventLocationController {
     @Autowired
     private EventLocationService eventLocationService;
