@@ -9,6 +9,8 @@ public class Event {
     private String id;
     private String name;
     private String date;
+    private Integer amount;
+    private String description;
     private EventCategory eventCategory;
     private EventLocation eventLocation;
 
@@ -35,6 +37,22 @@ public class Event {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public EventCategory getEventCategory() {
